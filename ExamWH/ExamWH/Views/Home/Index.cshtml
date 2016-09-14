@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Risk Sample";
+}
+
+<header>
+    <h1>@ViewBag.Title</h1>
+</header>
+
+<div id="main-content">
+
+    <p class="error" data-bind="text: error"></p>
+
+
+    @*<section id="lists" data-bind="foreach: todoLists, visible: todoLists().length > 0">
+
+    </section>*@
+
+
+</div>
+
+
+@section scripts {
+    @Scripts.Render("~/bundles/knockout")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/todo")
+}
