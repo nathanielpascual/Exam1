@@ -7,6 +7,12 @@
 <header>
     <h1>@ViewBag.Title</h1>
 
+    <style>
+        .high-risk {
+            background-color:red;
+        }
+
+    </style>
 </header>
 
 <div id="main-content">
@@ -20,21 +26,35 @@
                 <th>Event</th>
                 <th>Participant</th>
                 <th>Stake</th>
-                <th>Won</th>
+                <th>To Win</th>
             </tr>
         </thead>
         <tbody>
             
             @foreach (var item in Model)
-{
-    <tr class="active">
-        <td>@Html.DisplayFor(m => item.Customer)</td>
-        <td>@Html.DisplayFor(m => item.Event)</td>
-        <td>@Html.DisplayFor(m => item.Participant)</td>
-        <td>@Html.DisplayFor(m => item.Stake)</td>
-        <td>@Html.DisplayFor(m => item.Won)</td>
-    </tr>
-}
+            {
+                if(item.HighRisk)
+                {  <tr class="high-risk">
+                    <td>@Html.DisplayFor(m => item.Customer)</td>
+                    <td>@Html.DisplayFor(m => item.Event)</td>
+                    <td>@Html.DisplayFor(m => item.Participant)</td>
+                    <td>@Html.DisplayFor(m => item.Stake)
+                    </td>
+                    <td>@Html.DisplayFor(m => item.ToWin)</td>
+                </tr>}
+                else
+                {  <tr class="active">
+                    <td>@Html.DisplayFor(m => item.Customer)</td>
+                    <td>@Html.DisplayFor(m => item.Event)</td>
+                    <td>@Html.DisplayFor(m => item.Participant)</td>
+                    <td>@Html.DisplayFor(m => item.Stake)
+                    </td>
+                    <td>@Html.DisplayFor(m => item.ToWin)</td>
+                </tr>}
+               
+                
+             
+            }
         </tbody>
     </table>
     @*<section id="lists" data-bind="foreach: todoLists, visible: todoLists().length > 0">

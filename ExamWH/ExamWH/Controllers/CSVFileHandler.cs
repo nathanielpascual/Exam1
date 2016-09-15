@@ -31,7 +31,8 @@ namespace ExamWH.Controllers
                         Stake = Convert.ToSingle(values[3]),
                         Won = (Settled ? Convert.ToSingle(values[4]) : 0),
                         ToWin = (!Settled ? Convert.ToSingle(values[4]) : 0),
-                        hasWon = (Convert.ToSingle(values[4]) > 0 ? true : false)
+                        hasWon = (Convert.ToSingle(values[4]) > 0 ? true : false),
+                        HighRisk = false
                     });
                 }
             }

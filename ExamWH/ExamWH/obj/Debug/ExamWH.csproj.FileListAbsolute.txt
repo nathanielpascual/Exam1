@@ -21,6 +21,5 @@ C:\Users\nathan-pc\Documents\GitHub\Exam\ExamWH\ExamWH\bin\System.Web.Razor.xml
 C:\Users\nathan-pc\Documents\GitHub\Exam\ExamWH\ExamWH\bin\System.Web.WebPages.xml
 C:\Users\nathan-pc\Documents\GitHub\Exam\ExamWH\ExamWH\bin\System.Web.WebPages.Deployment.xml
 C:\Users\nathan-pc\Documents\GitHub\Exam\ExamWH\ExamWH\bin\System.Web.WebPages.Razor.xml
-C:\Users\nathan-pc\Documents\GitHub\Exam\ExamWH\ExamWH\obj\Debug\ExamWH.csprojResolveAssemblyReference.cache
 C:\Users\nathan-pc\Documents\GitHub\Exam\ExamWH\ExamWH\obj\Debug\ExamWH.dll
 C:\Users\nathan-pc\Documents\GitHub\Exam\ExamWH\ExamWH\obj\Debug\ExamWH.pdb

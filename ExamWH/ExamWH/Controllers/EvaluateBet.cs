@@ -35,13 +35,31 @@ namespace ExamWH.Controllers
             return retValue;
         }
 
+        private void CheckUnusual(List<Bet> list)
+        {
+            foreach (var item in list)
+            {
+                float average = GetHistoryBetAverage(item.Customer);
+                float tentimes = GetHistoryBetAverage(item.Customer) * 10;
+                float thirtytimes = GetHistoryBetAverage(item.Customer) * 30;
+
+                if (item.Stake > tentimes || item.Stake > thirtytimes)
+                    item.HighRisk = true;
+            }
+
+            BetList.Unsettled = list;
+        }
+
         private void SetBetlist(bool set)
         {
-
+            List<Bet> list = new List<Bet>();
             BetList = new Models.BetList();
             CSVFileHandler file = new CSVFileHandler();
             BetList.Settled = file.ExtractCSVFile("Settled.csv");
-            BetList.Unsettled = file.ExtractCSVFile("Unsettled.csv");
+            list = file.ExtractCSVFile("Unsettled.csv",false);
+
+            CheckUnusual(list);
+            list = null;
 
         }
     }

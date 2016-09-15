@@ -20,5 +20,7 @@ namespace ExamWH.Models
         public float Won { get; set; }
 
         public bool hasWon { get; set; }
+
+        public bool HighRisk { get; set; }
     }
 }
