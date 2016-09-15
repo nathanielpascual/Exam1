@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using ExamWH.Models;
+using ExamWH;
 namespace ExamWH.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index(string returnUrl)
+        [HttpGet]
+        public ActionResult Index()
         {
-            
-            return View();
+            EvaluateBet evaluate = new EvaluateBet(true);
+           
+            return View(evaluate.BetList.Unsettled);
         }
     }
 }

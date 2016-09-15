@@ -1,17 +1,42 @@
-﻿
+﻿@model List<ExamWH.Models.Bet>
+
 @{
     ViewBag.Title = "Risk Sample";
 }
 
 <header>
     <h1>@ViewBag.Title</h1>
+
 </header>
 
 <div id="main-content">
 
     <p class="error" data-bind="text: error"></p>
 
-
+    <table class="table">
+        <thead >
+            <tr class="active">
+                <th>Customer</th>
+                <th>Event</th>
+                <th>Participant</th>
+                <th>Stake</th>
+                <th>Won</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            @foreach (var item in Model)
+{
+    <tr class="active">
+        <td>@Html.DisplayFor(m => item.Customer)</td>
+        <td>@Html.DisplayFor(m => item.Event)</td>
+        <td>@Html.DisplayFor(m => item.Participant)</td>
+        <td>@Html.DisplayFor(m => item.Stake)</td>
+        <td>@Html.DisplayFor(m => item.Won)</td>
+    </tr>
+}
+        </tbody>
+    </table>
     @*<section id="lists" data-bind="foreach: todoLists, visible: todoLists().length > 0">
 
     </section>*@
